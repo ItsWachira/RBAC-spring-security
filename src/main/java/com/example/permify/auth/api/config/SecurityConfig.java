@@ -41,7 +41,7 @@ public class SecurityConfig  {
         http.csrf().disable()
             .authorizeRequests()
             .requestMatchers("/api/auth/login").permitAll()
-            .requestMatchers("/api/home").hasRole("ADMIN") // Restrict access to /rest/home to ADMIN role
+            .requestMatchers("/api/home").hasAuthority("ADMIN") // Restrict access to /rest/home to ADMIN role
             .requestMatchers("/error").permitAll() 
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
