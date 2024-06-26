@@ -33,8 +33,10 @@ public class JwtUtil {
     if (role != null) {
         claims.put("roles", List.of("ROLE_" + role.getName()));
     } else {
-        claims.put("roles", List.of("ROLE_" + role.getName()));
+        // Handle the case when the role is null
+        claims.put("roles", Collections.emptyList());
     }
+
         Date tokenCreateTime = new Date();
         Date tokenValidity = new Date(tokenCreateTime.getTime() + TimeUnit.MINUTES.toMillis(accessTokenValidity));
         return Jwts.builder()
