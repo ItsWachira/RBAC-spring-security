@@ -39,7 +39,7 @@ public class SecurityConfig  {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-            .formLogin().disable() // Disable the default login form
+            .formLogin().disable() /
             .authorizeRequests()
             .requestMatchers("/api/auth/login").permitAll()
             .requestMatchers("/api/home").hasAuthority("ADMIN") // Restrict access to /rest/home to ADMIN role
