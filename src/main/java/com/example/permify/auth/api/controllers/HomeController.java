@@ -14,7 +14,7 @@ public class HomeController {
     @ResponseBody
     @RequestMapping(value = "",method = RequestMethod.GET)
     public ResponseEntity<String> hello(){
-        return ResponseEntity.ok("Hello World");
+        return ResponseEntity.ok("Hello, World!");
     }
 
 
