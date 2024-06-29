@@ -1,5 +1,8 @@
 package com.example.permify.auth.api.entities;
 
+
+//role entity 
+
 public class Role {
 
     private Long id;
