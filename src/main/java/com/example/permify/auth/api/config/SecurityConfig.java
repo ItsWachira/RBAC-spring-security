@@ -42,7 +42,7 @@ public class SecurityConfig  {
             .formLogin().disable() //override the default config and disable login form
             .authorizeRequests()
             .requestMatchers("/api/auth/login").permitAll()
-            .requestMatchers("/api/home").hasAuthority("ADMIN") // Restrict access to /rest/home to ADMIN role
+            .requestMatchers("/api/home").hasAuthority("ADMIN") 
             .requestMatchers("/error").permitAll() 
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

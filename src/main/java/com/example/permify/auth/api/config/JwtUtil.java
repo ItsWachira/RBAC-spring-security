@@ -87,9 +87,9 @@ public class JwtUtil {
         return claims.getSubject();
     }
 
-    private List<String> getRoles(Claims claims) {
-        return (List<String>) claims.get("roles");
-    }
+    // private List<String> getRoles(Claims claims) {
+    //     return (List<String>) claims.get("roles");
+    // }
 
 
 }
