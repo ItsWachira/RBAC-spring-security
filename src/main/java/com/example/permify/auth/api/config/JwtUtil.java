@@ -26,14 +26,14 @@ public class JwtUtil {
     public JwtUtil(){
         this.jwtParser = Jwts.parser().setSigningKey(secret_key);
     }
-
+    // create jwt token method
     public String createToken(User user) {
     Claims claims = Jwts.claims().setSubject(user.getEmail());
     Role role = user.getRole();
     if (role != null) {
         claims.put("roles", List.of("ROLE_" + role.getName()));
     } else {
-        // Handle the case when the role is null
+        
         claims.put("roles", Collections.emptyList());
     }
 
