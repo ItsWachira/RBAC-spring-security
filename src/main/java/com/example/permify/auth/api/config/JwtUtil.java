@@ -26,7 +26,7 @@ public class JwtUtil {
     public JwtUtil(){
         this.jwtParser = Jwts.parser().setSigningKey(secret_key);
     }
-    // create jwt token method
+    // create jwt token method 
     public String createToken(User user) {
     Claims claims = Jwts.claims().setSubject(user.getEmail());
     Role role = user.getRole();
