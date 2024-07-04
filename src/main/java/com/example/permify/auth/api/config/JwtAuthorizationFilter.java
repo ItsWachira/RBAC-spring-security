@@ -49,11 +49,11 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
             if (claims != null && jwtUtil.validateClaims(claims)) {
                 String email = claims.getSubject();
 
-                // Authenticate the user based on email
+                
                 Authentication authenticationToken = new UsernamePasswordAuthenticationToken(email, null);
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
-                // Authorize the user based on roles
+                
                 List<String> roles = (List<String>) claims.get("roles");
 
                 if (roles != null && !roles.isEmpty()) {
