@@ -26,4 +26,18 @@ public class UserRepository {
         user.setRole(role);
         return user;
     }
+
+    public User findUserByEmail(String email) {
+        User user = new User(email, "123456");
+        Role role;
+    
+        if (email.equals("admin@example.com")) {
+            role = roleRepository.findByName("ADMIN").orElseThrow(() -> new RuntimeException("Admin role not found"));
+        } else {
+            role = roleRepository.findByName("USER").orElseGet(() -> new Role("USER"));
+        }
+    
+        user.setRole(role);
+        return user;
+    }
 }
