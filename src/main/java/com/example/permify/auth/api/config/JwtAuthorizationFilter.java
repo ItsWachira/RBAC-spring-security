@@ -64,7 +64,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                     Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorities);
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 } else {
-                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied");
+                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "You are not authorized to access this resource.");
                     return;
                 }
             } else {
