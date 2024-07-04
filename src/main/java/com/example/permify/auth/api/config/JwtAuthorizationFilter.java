@@ -68,7 +68,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                     return;
                 }
             } else {
-                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied");
+                response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access denied!");
                 return;
             }
         } catch (Exception e) {
