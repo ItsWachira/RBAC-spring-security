@@ -13,19 +13,19 @@ public class UserRepository {
         this.roleRepository = roleRepository;
     }
 
-    public User findUserByEmail(String email) {
-        User user = new User(email, "123456");
-        Role role;
+    // public User findUserByEmail(String email) {
+    //     User user = new User(email, "123456");
+    //     Role role;
 
-        if (email.equals("admin@example.com")) {
-            role = roleRepository.findByName("ADMIN").orElse(null);
-        } else {
-            role = roleRepository.findByName("USER").orElse(null);
-        }
+    //     if (email.equals("admin@example.com")) {
+    //         role = roleRepository.findByName("ADMIN").orElse(null);
+    //     } else {
+    //         role = roleRepository.findByName("USER").orElse(null);
+    //     }
 
-        user.setRole(role);
-        return user;
-    }
+    //     user.setRole(role);
+    //     return user;
+    // }
 
     public User findUserByEmail(String email) {
         User user = new User(email, "123456");
