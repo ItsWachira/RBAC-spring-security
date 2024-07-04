@@ -30,6 +30,7 @@ public class JwtUtil {
     public String createToken(User user) {
     Claims claims = Jwts.claims().setSubject(user.getEmail());
     Role role = user.getRole();
+    System.out.printLn(role);
     if (role != null) {
         claims.put("roles", List.of("ROLE_" + role.getName()));
     } else {
