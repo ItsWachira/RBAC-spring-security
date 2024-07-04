@@ -34,7 +34,7 @@ public class JwtUtil {
     if (role != null) {
         claims.put("roles", List.of(role.getName()));
     } else {
-        // Handle the case when the role is null
+        l
         if (user.getEmail().equals("admin@example.com")) {
             claims.put("roles", List.of("ADMIN"));
         } else {
