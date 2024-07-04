@@ -33,6 +33,8 @@ public class UserRepository {
     
         if (email.equals("admin@example.com")) {
             role = roleRepository.findByName("ADMIN").orElseThrow(() -> new RuntimeException("Admin role not found"));
+            System.out.println(role);
+        
         } else {
             role = roleRepository.findByName("USER").orElseGet(() -> new Role("USER"));
         }
