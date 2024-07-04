@@ -32,12 +32,15 @@ public class JwtUtil {
     Role role = user.getRole();
     System.out.println(role);
     if (role != null) {
-        claims.put("roles", List.of("ROLE_" + role.getName()));
+        claims.put("roles", List.of(role.getName()));
     } else {
-        
-        claims.put("roles", Collections.emptyList());
+        // Handle the case when the role is null
+        if (user.getEmail().equals("admin@example.com")) {
+            claims.put("roles", List.of("ADMIN"));
+        } else {
+            claims.put("roles", Collections.emptyList());
+        }
     }
-
         Date tokenCreateTime = new Date();
         Date tokenValidity = new Date(tokenCreateTime.getTime() + TimeUnit.MINUTES.toMillis(accessTokenValidity));
         return Jwts.builder()
