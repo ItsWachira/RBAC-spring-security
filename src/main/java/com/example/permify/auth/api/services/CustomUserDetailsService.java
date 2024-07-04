@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.permify.auth.api.model.user.User;
 import com.example.permify.auth.api.repositories.UserRepository;
-
+import com.example.permify.auth.api.entities.*;
 import java.util.ArrayList;
 import java.util.List;
 
